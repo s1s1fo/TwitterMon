@@ -52,7 +52,10 @@ Automatic installation
 
 For an automatic installation, simply run the **installTM.sh** file that is provided with the solution installation package. This file will copy the module files to the AIL platform folders, modify the necessary AIL platform files (using the python file **modifyAIL.py**) and install the dependencies that the system needs.
 </br>
-<code>installTM.sh</code>
+<pre>
+$ chmod a+x ./installTM.sh
+$ ./installTM.sh
+</pre>
 
 </br>
 
