@@ -258,6 +258,20 @@ This area is divided into two sections: the left column shows the information fr
 
 </br>
 </br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
 
 <img align="right" style="padding:10px" src="media/bf817d3196e9614d76a3b5527f37b3ad.png"> This panel with vertical scroll shows all the tweets that have been collected in the search, as well as the following information for each of them:
 
@@ -269,9 +283,16 @@ This area is divided into two sections: the left column shows the information fr
 
 -   The result of the sentiment analysis performed.
 
+</br>
+</br>
 
-</br>**Important Tweets**: the user can label the Tweet as important through the ![](media/63de7eedf997f51fa9eafda773a8e5c3.png) icon.
+**Important Tweets**: the user can label the Tweet as important through the ![](media/63de7eedf997f51fa9eafda773a8e5c3.png) icon.
 
+</br>
+</br>
+</br>
+</br>
+</br>
 </br>
 
 The module allows filtering the Tweet list by entering terms in the search bar. In addition, by pressing the ![](media/202e41a09490428363f6df38c60df8f4.png) icon, you can filter the Tweets labelled as important.
