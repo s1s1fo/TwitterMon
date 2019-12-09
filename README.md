@@ -1,4 +1,6 @@
-<center>![](media/9ce08919229cbd73d7c529b725eefb76.jpg)</center>
+<p align="center">
+  <img src="media/9ce08919229cbd73d7c529b725eefb76.jpg">
+</p>
 
 #**TWITTERMON**
 
@@ -27,6 +29,9 @@ Installation
 
 Two installation modes are presented, an automatic one that performs the deployment on an existing installation of the AIL platform and another manual that describes the steps to follow to perform the installation.
 
+
+</br></br>
+
 Requirements
 ------------
 
@@ -41,10 +46,11 @@ Requirements
 **Note:** Automatic updates of AIL can be deactivated using the **auto_update** field that can be found in the AIL -framework / configs / **update.cfg**
 
 </br>
+
 Automatic installation
 ----------------------
 
-For an automatic installation, simply run the **installTM.sh** file that is provided with the solution installation package. This will be responsible for copying the files to the AIL platform folders, modifying the necessary platform files (using the python file **modifyAIL.py**) and installing the dependencies that the system needs.
+For an automatic installation, simply run the **installTM.sh** file that is provided with the solution installation package. This file will copy the module files to the AIL platform folders, modify the necessary AIL platform files (using the python file **modifyAIL.py**) and install the dependencies that the system needs.
 </br>
 <code>installTM.sh</code>
 
@@ -67,9 +73,10 @@ It is necessary to copy the files and folders indicated in the left column to th
 | AIL_var/www/templates/**twittermon**/     | \$AIL-framework/var/www/templates/ |
 
 </br>
+
 ### 2. Install libraries
 
-The system requires that PyQuery and VaderSentiment libraries to be installed in the Python3 virtual environment of the AIL platform:
+The system requires the PyQuery and VaderSentiment libraries to be installed in the Python3 virtual environment of the AIL platform:
 
 -   \$AIL-framework/AILENV/bin/**pip3 install pyquery**
 
@@ -81,6 +88,7 @@ source ~/AIL-framework/AILENV/bin/activate
 </pre>
 
 </br>
+
 ### 3. Modify AIL files
 
 Finally, it is necessary to modify the following AIL files as indicated:
@@ -92,6 +100,7 @@ Add the following entry:
 subscribe = Redis_Global
 </pre>
 </br>
+
 **\$AIL-framework/bin/LAUNCH.sh**
 
 Include the execution of the Tweets processing script:
@@ -99,6 +108,7 @@ Include the execution of the Tweets processing script:
 screen -S "Script_AIL" -X screen -t "TwitterAnalyzer" bash -c "cd ${AIL_BIN}; ${ENV_PY} ./TwitterAnalyzer.py; read x"
 </pre>
 </br>
+
 **\$AIL-framework/var/www/templates/nav_bar.html**
 
 Include the link, in the top navigation bar, to the TwitterMon module:
@@ -109,6 +119,7 @@ Include the link, in the top navigation bar, to the TwitterMon module:
 ```
 </br>
 Once these steps have been completed, the AIL platform can be launched through its execution script:
+
 ```bash
 ~\$AIL-framework/bin/LAUNCH.sh -l
 ```
@@ -117,7 +128,10 @@ Once these steps have been completed, the AIL platform can be launched through i
 User Manual
 ===========
 
-1. Accessing TwitterMon
+</br>
+</br>
+
+### 1. Accessing TwitterMon
 --------------------
 
 While the AIL platform is running, the Twitter monitoring page, **TwitterMon**, is available through the AIL top menu, or by accessing the following address:
@@ -126,8 +140,10 @@ While the AIL platform is running, the Twitter monitoring page, **TwitterMon**, 
 
 ![](media/91acaca7578c582fa43272e4d3f61510.png)
 
+</br>
+</br>
 
-2. Monitoring page
+### 2. Monitoring page
 ---------------
 
 The monitoring page, presented below, allows the user to start a new monitoring or resume a previous search. If a search is resumed, the Tweets that are collected in the new search will be added to the old one. It is important to note that to resume a monitoring you only have to use the same search name in the [**Search name**] field that was used in the search you want to continue and it is not necessary to set the same search parameters, which allows greater flexibility in searches.
@@ -136,10 +152,14 @@ The monitoring page, presented below, allows the user to start a new monitoring 
 
 ![](media/857394ab5288d56c36d1daae9fafb9cb.png)
 
-3. Configuring the search
+</br>
+</br>
+
+
+### 3. Configuring the search
 ----------------------
 
-Apart from the descriptive name that the user must give to the search by means of the [**Search Name**] field, the following fields are **mandatory** for monitoring (at least one of them or a combination of them):
+Apart from the descriptive name that the user must give to the search by means of the [**Search Name**] field, the following fields are **mandatory** for monitoring (at least one of them):
 
 -   **Terms**: Terms, separated by spaces, to look for in the content of the Tweets. It allows to exclude terms by putting the sign "-" before the term.
 
@@ -156,29 +176,47 @@ In addition, the system allows to configure other parameters in the search:
 
 -   **Only Top Tweets**: The system will only search in the Top Tweets.
 
+</br>
+
 Once the parameters have been established, the user must choose through the [**Monitor Mode**] field between a real-time monitoring or the monitoring of a specific period, for which the start and end date will be required.
 
 Monitoring will begin as soon as the user presses the [**Start Monitoring**] button:
-<center>![](media/3050c4addda8011593cfc54c63431ad8.png)</center>
+<p align="center">
+  <img src="media/3050c4addda8011593cfc54c63431ad8.png">
+</p>
+
+</br>
+</br>
 
 
-4. Monitoring status
+### 4. Monitoring status
 -----------------
 
 The status of the monitoring will be displayed on the right side of the page, in addition to the collection progress and the Tweet text that is currently being sent to the AIL queue.
-<center>![](media/c30e20051075906995b65c9fc883193f.png)</center>
+
+
+<p align="center">
+  <img src="media/c30e20051075906995b65c9fc883193f.png">
+</p>
 
 </br>
 As soon as the first Tweet has been sent to the processing queue, the results will begin to appear in the Analyzer page.
+
 </br>
-5. Analyzer: Checking the results
+</br>
+
+### 5. Analyzer: Checking the results
 ------------------------------
 
 The results page shows the list of searches performed, as well as the detail and analysis performed on each of the samples.
 
 ![](media/8665a56dfa2812eacb491a3d176e64c3.png)
 
+</br>
+
 The interface has **THREE DIFFERENT AREAS**:
+
+</br>
 </br>
 
 The **UPPER AREA lists the searches performed**, along with a summary of those searches such as the number of tweets, the number of hashtags or the result of sentiment analysis.
@@ -186,26 +224,41 @@ The **UPPER AREA lists the searches performed**, along with a summary of those s
 ![](media/e2eec7384fda49ff2bd42fbe649072f8.png)
 
 Through the ![](media/8a23d96bbe797346d122f8f0b39c0062.png) icon you can delete a search, and through the ![](media/26f24a57b0e180393cccf1fba49e6509.png) icon you can access the analysis detail.
+
 </br>
+
 The **CENTRAL AREA shows information of interest related to all the searches** carried out, indicating the average feeling of all the searches, the Tweeters that appear most in the searches, the most used languages and the hashstags with more appearances.
-<center>![](media/680de3546e45fbaa608ad270a316be70.png)</center>
 
+<p align="center">
+  <img src="media/680de3546e45fbaa608ad270a316be70.png">
+</p>
 
 </br>
+
 The relationship between the sentiment icon shown and the value obtained in the analysis is as follows:
 
-<center>![](media/b95e063aa245417348bec2aeaf932f20.png)</center>
+<p align="center">
+  <img src="media/b95e063aa245417348bec2aeaf932f20.png">
+</p>
 
 Check the [vaderSentiment](https://github.com/cjhutto/vaderSentiment) tool for more information regarding the sentiment analysis performed.
+
 </br>
+</br>
+
 The **LOWER AREA**, once a search is selected, **contains the detail of the analysis performed on that search**.
 
 ![](media/997c520700dcb02383eebb05baaa98fd.png)
 
 This area is divided into two sections: the left column shows the information from the search analysis while the right column shows the tweets collected along with information about their treatment.
+
 </br>
+
 <img align="left" style="padding:10px" src="media/7656064bf3b0ad609be3f0393d210183.png"> This section shows general information from the search such as the time period in which the Tweets were published, as well as the average sentiment and the number of Tweets, favorites and retweets.In addition, all users, languages, hashtags, mentions and emojis of the collected Tweets are listed in different areas, ordered by the number of occurrences. Each one of them provide a link to the Twitter official element.
+
 </br>
+</br>
+
 <img align="right" style="padding:10px" src="media/bf817d3196e9614d76a3b5527f37b3ad.png"> This panel with vertical scroll shows all the tweets that have been collected in the search, as well as the following information for each of them:
 
 -   The Tweet in the official Twitter layout.
@@ -218,13 +271,19 @@ This area is divided into two sections: the left column shows the information fr
 
 
 </br>**Important Tweets**: the user can label the Tweet as important through the ![](media/63de7eedf997f51fa9eafda773a8e5c3.png) icon.
+
 </br>
-The module allows filtering the Tweet list by entering terms in the search bar. In addition, by pressing the ![](media/202e41a09490428363f6df38c60df8f4.png) icon, you can filter the Tweets marked as important.
-<center>
-![](media/bd267c3012b78abb97abf605253457b2.png)
-</center>
+
+The module allows filtering the Tweet list by entering terms in the search bar. In addition, by pressing the ![](media/202e41a09490428363f6df38c60df8f4.png) icon, you can filter the Tweets labelled as important.
+
+<p align="center">
+  <img src="media/bd267c3012b78abb97abf605253457b2.png">
+</p>
+
 </br>
-6. Configuring the module
+</br>
+
+### 6. Configuring the module
 ----------------------
 
 The configuration page allows to modify certain parameters of the TwitterMon module.
