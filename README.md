@@ -35,7 +35,7 @@ Two installation modes are presented, an automatic one that performs the deploym
 Requirements
 ------------
 
--   AIL Framework v2.2, v2.3, v2.4 or v2.5 (not tested in later versions).
+-   AIL Framework v2.2 - v2.8 (not tested in later versions).
 
 -   Python \>3 (AIL already configures a Python3 virtual environment in AILENV).
 
